@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="analogy.css">
+</head>
+
+<body>
+  <!-- <div class="circle">
+    <div class="zsec1">
+      <div class="jsec1"></div>
+    </div>
+    <div class="zmin1">
+      <div class="jmin1"></div>
+    </div>
+    <div class="zhur1">
+      <div class="jhur1"></div>
+    </div>
+    <div class="point"></div>
+    <h3>animation + 雙DIV</h3>
+  </div> -->
+  <!-- <div class="circle">
+    <div class="jsec2"></div>
+    <div class="jmin2"></div>
+    <div class="jhur2"></div>
+    <h3>animation + 圖片表示</h3>
+  </div> -->
+  <div class="circle">
+    <div class="jsec1 osec3"></div>
+    <div class="jmin1 omin3"></div>
+    <div class="jhur1 ohur3"></div>
+  </div>
+
+  <script>
+    const nt = new Date();
+    function getRO() {
+      const
+        nh = nt.getHours(),
+        nm = nt.getMinutes(),
+        ns = nt.getSeconds();
+      return [nh * (360/12) + nm * (360/12/60) + ns * (360 / 12 / 60 / 60), nm * (360/60) + ns * (360/60/60), ns * (360/60)];
+    }
+    // sh=nh*(360/12)+nm*(360/12/60)+ns*(360/12/60/60),
+//sm=nm(360/60)+ns*(360/60/60),
+//ss=ns*(360/60);
+    document.write(`
+    <style>
+      @keyframes jsMove {
+        from{
+        transform: rotate(${getRO()[0]}deg);
+        }to{
+        transform: rotate(${getRO()[0] + 360}deg);
+        }
+      }
+      @keyframes jmMove {
+        from{
+        transform: rotate(${getRO()[1]}deg);
+        }to{
+        transform: rotate(${getRO()[1] + 360}deg);
+        }
+      }
+      @keyframes jhMove {
+        from{
+        transform: rotate(${getRO()[2]}deg);
+        }to{
+        transform: rotate(${getRO()[2] + 360}deg);
+        }
+      }
+      </style>`)
+    // const nh=nt.getHours();
+    // const nm=nt.getMinutes();
+    // const ns=nt.getSeconds();
+    // const 
+    //       sh=nh*30+nm*0.5+ns*(360/12/60/60),
+    //       sm=nm*6+ns*0.1,
+    //       ss=ns*6;
+    document.querySelector(".ohur4").style.transform = "rotate(" + getRO()[0] + "deg)"
+    document.querySelector(".omin4").style.transform = "rotate(" + getRO()[1] + "deg)"
+    document.querySelector(".osec4").style.transform = "rotate(" + getRO()[2] + "deg)"
+    setInterval(() => {
+      nt.setSeconds(nt.getSeconds() + 1);
+      document.querySelector(".ohur4").style.transform = "rotate(" + getRO()[0] + "deg)"
+      document.querySelector(".omin4").style.transform = "rotate(" + getRO()[1] + "deg)"
+      document.querySelector(".osec4").style.transform = "rotate(" + getRO()[2] + "deg)"
+    }
+      , 1000)
+  </script>
+</body>
+
+</html>

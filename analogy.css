@@ -1,0 +1,130 @@
+body{
+  margin: 0;
+  background: #BBB;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 100vh;
+  flex-wrap: wrap;
+  background-image: url('bg.jpg');
+  background-size: cover;
+}
+.circle{
+  width: 400px;
+  height: 400px;
+  background: url(./bg.png);
+  border-radius: 50%;
+  position: relative;
+}
+h3{
+  text-align: center;
+}
+.zsec1{
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  animation: jsMove 60s linear infinite;
+}
+.zmin1{
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  animation: jmMove 3600s linear infinite;
+}
+.zhur1{
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  animation: jhMove 43200s linear infinite;
+}
+.jhur1{
+  width: 30px;
+  height: 30%;
+  background: #00F9;
+  position: absolute;
+  left: 50%;
+  top: 25%;
+  margin-left: -15px;
+}
+.jmin1{
+  width: 30px;
+  height: 40%;
+  background: #0F09;
+  position: absolute;
+  left: 50%;
+  top: 15%;
+  margin-left: -15px;
+}
+.jsec1{
+  width: 30px;
+  height: 50%;
+  background: #F009;
+  position: absolute;
+  left: 50%;
+  top: 5%;
+  margin-left: -15px;
+}
+.jhur2{
+  width: 20px;
+  height: 200px;
+  background: url(./clock1.png);
+  position: absolute;
+  left: 50%;
+  margin-left: 0px;
+  animation: jhMove 43200s linear infinite;
+}
+.jmin2{
+  width: 20px;
+  height: 300px;
+  background: url(./clock2.png);
+  position: absolute;
+  left: 50%;
+  margin-left: 0px;
+  animation: jmMove 3600s linear infinite;
+}
+.jsec2{
+  width: 20px;
+  height: 400px;
+  background: url(./clock3.png);
+  position: absolute;
+  left: 50%;
+  margin-left: 0px;
+  animation: jsMove 60s linear infinite;
+}
+.ohur3{
+  width: 30px;
+  height: 75px;
+  top:120px;
+  left:185px;
+  background: url(./clock1.png);
+  animation: jhMove 43200s linear infinite;
+  transform-origin: 85% 75px;
+}
+.omin3{
+  width: 30px;
+  height: 150px;
+  top:75px;
+  left:185px;
+  background: url(./clock2.png);
+  animation: jmMove 3600s linear infinite;
+  transform-origin: 85% 120px;
+}
+.osec3{
+  width: 30px;
+  height: 225px;
+  top:0;
+  left:185px;
+  background: url(./clock3.png);
+  animation: jsMove 60s linear infinite;
+  /* 改成中心點為準，前面決定中心點，後面決定偏移 */
+  transform-origin: 85% 200px;
+}
+
+.point{
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #FF0;
+  position: absolute;
+  margin: 167.5px 167.5px;
+}
